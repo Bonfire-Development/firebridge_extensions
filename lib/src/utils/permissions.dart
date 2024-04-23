@@ -1,4 +1,4 @@
-import 'package:nyxx/nyxx.dart';
+import 'package:nyxx_self/nyxx.dart';
 
 /// Compute the permissions for [member] in a given [channel].
 ///
@@ -46,7 +46,9 @@ Future<Permissions> computePermissions(
 
     Flags<Permissions> permissions = basePermissions;
 
-    final everyoneOverwrite = channel.permissionOverwrites.where((overwrite) => overwrite.id == guild.id).singleOrNull;
+    final everyoneOverwrite = channel.permissionOverwrites
+        .where((overwrite) => overwrite.id == guild.id)
+        .singleOrNull;
     if (everyoneOverwrite != null) {
       permissions &= ~everyoneOverwrite.deny;
       permissions |= everyoneOverwrite.allow;
@@ -56,7 +58,9 @@ Future<Permissions> computePermissions(
     Flags<Permissions> deny = Permissions(0);
 
     for (final roleId in member.roleIds) {
-      final roleOverwrite = channel.permissionOverwrites.where((overwrite) => overwrite.id == roleId).singleOrNull;
+      final roleOverwrite = channel.permissionOverwrites
+          .where((overwrite) => overwrite.id == roleId)
+          .singleOrNull;
       if (roleOverwrite != null) {
         allow |= roleOverwrite.allow;
         deny |= roleOverwrite.deny;
@@ -66,7 +70,9 @@ Future<Permissions> computePermissions(
     permissions &= ~deny;
     permissions |= allow;
 
-    final memberOverwrite = channel.permissionOverwrites.where((overwrite) => overwrite.id == member.id).singleOrNull;
+    final memberOverwrite = channel.permissionOverwrites
+        .where((overwrite) => overwrite.id == member.id)
+        .singleOrNull;
     if (memberOverwrite != null) {
       permissions &= ~memberOverwrite.deny;
       permissions |= memberOverwrite.allow;

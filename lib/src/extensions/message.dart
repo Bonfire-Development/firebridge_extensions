@@ -1,10 +1,11 @@
-import 'package:nyxx/nyxx.dart';
+import 'package:nyxx_self/nyxx.dart';
 import 'package:nyxx_extensions/nyxx_extensions.dart';
 
 /// Extensions on [Message]s.
 extension MessageExtensions on Message {
   /// A URL clients can visit to navigate to this message.
-  Future<Uri> get url async => Uri.https(manager.client.apiOptions.host, '${(await channel.get()).url.path}/$id');
+  // Future<Uri> get url async => Uri.https(
+  //     manager.client.apiOptions.host, '${(await channel.get()).url.path}/$id');
 
   /// Sends a reply to the message.
   Future<Message> sendReply(MessageBuilder builder) {
@@ -35,5 +36,6 @@ extension MessageExtensions on Message {
     Snowflake? before,
     int? pageSize,
   }) =>
-      manager.streamReactions(id, emoji, after: after, before: before, pageSize: pageSize);
+      manager.streamReactions(id, emoji,
+          after: after, before: before, pageSize: pageSize);
 }

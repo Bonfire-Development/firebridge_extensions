@@ -1,4 +1,4 @@
-import 'package:nyxx/nyxx.dart';
+import 'package:nyxx_self/nyxx.dart';
 import 'package:nyxx_extensions/src/utils/endpoint_paginator.dart';
 
 /// Extensions on [MessageManager]s.
@@ -46,7 +46,8 @@ extension MessageManagerExtensions on MessageManager {
     int? pageSize,
   }) =>
       streamPaginatedEndpoint(
-        ({before, after, limit}) => fetchReactions(id, emoji, after: after, limit: limit),
+        ({before, after, limit}) =>
+            fetchReactions(id, emoji, after: after, limit: limit),
         extractId: (user) => user.id,
         before: before,
         after: after,

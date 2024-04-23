@@ -1,4 +1,4 @@
-import 'package:nyxx/nyxx.dart';
+import 'package:nyxx_self/nyxx.dart';
 import 'package:nyxx_extensions/src/utils/endpoint_paginator.dart';
 
 /// Extensions on [GuildManager]s.
@@ -13,7 +13,8 @@ extension GuildManagerExtensions on GuildManager {
     int? pageSize,
   }) =>
       streamPaginatedEndpoint(
-        ({after, before, limit}) => listBans(id, after: after, before: before, limit: limit),
+        ({after, before, limit}) =>
+            listBans(id, after: after, before: before, limit: limit),
         extractId: (ban) => ban.user.id,
         before: before,
         after: after,

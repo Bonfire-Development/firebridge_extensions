@@ -2,8 +2,8 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 
-import 'package:nyxx/src/utils/to_string_helper/to_string_helper.dart';
-import 'package:nyxx/src/utils/parsing_helpers.dart';
+import 'package:nyxx_self/src/utils/to_string_helper/to_string_helper.dart';
+import 'package:nyxx_self/src/utils/parsing_helpers.dart';
 
 /// {@template emoji_definition}
 /// Information about a text emoji.
@@ -50,7 +50,8 @@ class EmojiDefinition with ToStringHelper {
   });
 }
 
-final _emojiDefinitionsUrl = Uri.parse("https://emzi0767.gl-pages.emzi0767.dev/discord-emoji/discordEmojiMap.min.json");
+final _emojiDefinitionsUrl = Uri.parse(
+    "https://emzi0767.gl-pages.emzi0767.dev/discord-emoji/discordEmojiMap.min.json");
 List<EmojiDefinition>? _cachedEmojiDefinitions;
 DateTime? _cachedAt;
 
@@ -58,11 +59,13 @@ DateTime? _cachedAt;
 ///
 /// This method caches results for 4 hours.
 Future<List<EmojiDefinition>> getEmojiDefinitions() async {
-  if (_cachedEmojiDefinitions != null && _cachedAt!.add(Duration(hours: 4)).isAfter(DateTime.timestamp())) {
+  if (_cachedEmojiDefinitions != null &&
+      _cachedAt!.add(Duration(hours: 4)).isAfter(DateTime.timestamp())) {
     return _cachedEmojiDefinitions!;
   } else {
     final response = await http.get(_emojiDefinitionsUrl);
-    final data = jsonDecode(utf8.decode(response.bodyBytes))['emojiDefinitions'];
+    final data =
+        jsonDecode(utf8.decode(response.bodyBytes))['emojiDefinitions'];
 
     _cachedAt = DateTime.timestamp();
     return _cachedEmojiDefinitions = [
@@ -76,7 +79,8 @@ Future<List<EmojiDefinition>> getEmojiDefinitions() async {
           assetUrl: Uri.parse(raw['assetUrl']),
           category: raw['category'] as String,
           alternateSurrogates: raw['alternativeSurrogates'] as String?,
-          alternateUtf32Codepoints: maybeParseMany(raw['alternativeUtf32codepoints']),
+          alternateUtf32Codepoints:
+              maybeParseMany(raw['alternativeUtf32codepoints']),
         ),
     ];
   }

@@ -1,4 +1,4 @@
-import "package:nyxx/nyxx.dart";
+import "package:nyxx_self/nyxx.dart";
 import "package:nyxx_extensions/src/extensions/snowflake_entity.dart";
 
 const _whitespaceCharacter = "‎";
@@ -79,22 +79,32 @@ Future<String> sanitizeContent(
         SanitizerTarget.emojis => guildEmojiRegex,
       };
 
-  Future<String> name(Match match, SanitizerTarget target) async => switch (target) {
+  Future<String> name(Match match, SanitizerTarget target) async =>
+      switch (target) {
         SanitizerTarget.everyone => match.group(1)!,
-        SanitizerTarget.channels => switch (await client.channels[Snowflake.parse(match.group(1)!)].getOrNull()) {
+        SanitizerTarget.channels => switch (await client
+              .channels[Snowflake.parse(match.group(1)!)]
+              .getOrNull()) {
             GuildChannel(:final name) || GroupDmChannel(:final name) => name,
-            DmChannel(:final recipient) => recipient.globalName ?? recipient.username,
+            DmChannel(:final recipient) =>
+              recipient.globalName ?? recipient.username,
             _ => 'Unknown Channel',
           },
-        SanitizerTarget.roles => switch (await guild?.roles[Snowflake.parse(match.group(1)!)].getOrNull()) {
+        SanitizerTarget.roles => switch (await guild
+              ?.roles[Snowflake.parse(match.group(1)!)]
+              .getOrNull()) {
             Role(:final name) => name,
             _ => 'Unknown Role',
           },
-        SanitizerTarget.users => switch (await guild?.members[Snowflake.parse(match.group(1)!)].getOrNull()) {
+        SanitizerTarget.users => switch (await guild
+              ?.members[Snowflake.parse(match.group(1)!)]
+              .getOrNull()) {
             Member(:final nick?) => nick,
             Member(:final user?) => user.globalName ?? user.username,
-            _ => switch (await client.users[Snowflake.parse(match.group(1)!)].getOrNull()) {
-                User(:final username, :final globalName) => globalName ?? username,
+            _ => switch (await client.users[Snowflake.parse(match.group(1)!)]
+                  .getOrNull()) {
+                User(:final username, :final globalName) =>
+                  globalName ?? username,
                 _ => 'Unknown User',
               },
           },
@@ -108,19 +118,28 @@ Future<String> sanitizeContent(
         SanitizerTarget.emojis => '',
       };
 
-  String suffix(SanitizerTarget target) => target == SanitizerTarget.emojis ? ':' : '';
+  String suffix(SanitizerTarget target) =>
+      target == SanitizerTarget.emojis ? ':' : '';
 
-  Future<String> resolve(Match match, SanitizerTarget target, SanitizerAction action) async => switch (action) {
+  Future<String> resolve(
+          Match match, SanitizerTarget target, SanitizerAction action) async =>
+      switch (action) {
         SanitizerAction.ignore => match.group(0)!,
         SanitizerAction.remove => '',
         SanitizerAction.nameNoPrefix => await name(match, target),
-        SanitizerAction.name => '${prefix(target)}${await name(match, target)}${suffix(target)}',
+        SanitizerAction.name =>
+          '${prefix(target)}${await name(match, target)}${suffix(target)}',
         SanitizerAction.sanitize => switch (target) {
-            SanitizerTarget.users => '<@$_whitespaceCharacter${match.group(1)!}>',
-            SanitizerTarget.roles => '<@&$_whitespaceCharacter${match.group(1)!}>',
-            SanitizerTarget.everyone => '@$_whitespaceCharacter${match.group(1)!}',
-            SanitizerTarget.channels => '<#$_whitespaceCharacter${match.group(1)!}>',
-            SanitizerTarget.emojis => '<$_whitespaceCharacter${match.group(1) ?? ''}:${match.group(2)}:${match.group(3)}>',
+            SanitizerTarget.users =>
+              '<@$_whitespaceCharacter${match.group(1)!}>',
+            SanitizerTarget.roles =>
+              '<@&$_whitespaceCharacter${match.group(1)!}>',
+            SanitizerTarget.everyone =>
+              '@$_whitespaceCharacter${match.group(1)!}',
+            SanitizerTarget.channels =>
+              '<#$_whitespaceCharacter${match.group(1)!}>',
+            SanitizerTarget.emojis =>
+              '<$_whitespaceCharacter${match.group(1) ?? ''}:${match.group(2)}:${match.group(3)}>',
           },
       };
 
@@ -134,7 +153,8 @@ Future<String> sanitizeContent(
     for (final match in pattern.allMatches(result)) {
       final sanitized = await resolve(match, target, targetAction);
 
-      result = result.replaceRange(match.start - shift, match.end - shift, sanitized);
+      result = result.replaceRange(
+          match.start - shift, match.end - shift, sanitized);
 
       shift += (match.end - match.start) - sanitized.length;
     }

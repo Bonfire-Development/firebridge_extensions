@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:nyxx/nyxx.dart';
+import 'package:nyxx_self/nyxx.dart';
 
 /// A global instance of the [GuildJoins] plugin.
 final guildJoins = GuildJoins();
@@ -20,22 +20,26 @@ final guildJoins = GuildJoins();
 /// [NyxxGateway.onGuildDelete], but only when the event is triggered by the
 /// client joining or leaving a guild.
 class GuildJoins extends NyxxPlugin<NyxxGateway> {
-  final StreamController<UnavailableGuildCreateEvent> _onGuildJoinController = StreamController.broadcast();
-  final StreamController<GuildDeleteEvent> _onGuildLeaveController = StreamController.broadcast();
+  final StreamController<UnavailableGuildCreateEvent> _onGuildJoinController =
+      StreamController.broadcast();
+  final StreamController<GuildDeleteEvent> _onGuildLeaveController =
+      StreamController.broadcast();
 
   /// A stream of [UnavailableGuildCreateEvent] triggered by the client being
   /// added to a [Guild].
   ///
   /// As with [NyxxGateway.onGuildCreate], this stream normally emits
   /// [GuildCreateEvent]s, other than in the event of an outage.
-  Stream<UnavailableGuildCreateEvent> get onGuildJoin => _onGuildJoinController.stream;
+  Stream<UnavailableGuildCreateEvent> get onGuildJoin =>
+      _onGuildJoinController.stream;
 
   /// A stream of [GuildDeleteEvent]s triggered by the client being removed
   /// from a [Guild].
   Stream<GuildDeleteEvent> get onGuildLeave => _onGuildLeaveController.stream;
 
   @override
-  NyxxPluginState<NyxxGateway, GuildJoins> createState() => _GuildJoinsState(this);
+  NyxxPluginState<NyxxGateway, GuildJoins> createState() =>
+      _GuildJoinsState(this);
 }
 
 class _GuildJoinsState extends NyxxPluginState<NyxxGateway, GuildJoins> {

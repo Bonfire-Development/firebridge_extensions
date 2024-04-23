@@ -1,4 +1,4 @@
-import 'package:nyxx/nyxx.dart';
+import 'package:nyxx_self/nyxx.dart';
 
 /// Extensions on [Embed].
 extension EmbedExtensions on Embed {
@@ -20,15 +20,18 @@ extension EmbedExtensions on Embed {
 }
 
 extension on EmbedAuthor {
-  EmbedAuthorBuilder _toEmbedAuthorBuilder() => EmbedAuthorBuilder(name: name, iconUrl: iconUrl, url: url);
+  EmbedAuthorBuilder _toEmbedAuthorBuilder() =>
+      EmbedAuthorBuilder(name: name, iconUrl: iconUrl, url: url);
 }
 
 extension on EmbedField {
-  EmbedFieldBuilder _toEmbedFieldBuilder() => EmbedFieldBuilder(name: name, value: value, isInline: inline);
+  EmbedFieldBuilder _toEmbedFieldBuilder() =>
+      EmbedFieldBuilder(name: name, value: value, isInline: inline);
 }
 
 extension on EmbedFooter {
-  EmbedFooterBuilder _toEmbedFooterBuilder() => EmbedFooterBuilder(text: text, iconUrl: iconUrl);
+  EmbedFooterBuilder _toEmbedFooterBuilder() =>
+      EmbedFooterBuilder(text: text, iconUrl: iconUrl);
 }
 
 extension on EmbedImage {
@@ -36,5 +39,6 @@ extension on EmbedImage {
 }
 
 extension on EmbedThumbnail {
-  EmbedThumbnailBuilder _toEmbedThumbnailBuilder() => EmbedThumbnailBuilder(url: url);
+  EmbedThumbnailBuilder _toEmbedThumbnailBuilder() =>
+      EmbedThumbnailBuilder(url: url);
 }

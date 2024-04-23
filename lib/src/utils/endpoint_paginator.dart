@@ -1,4 +1,4 @@
-import 'package:nyxx/nyxx.dart';
+import 'package:nyxx_self/nyxx.dart';
 
 /// Controls the order in which entities from paginated endpoints are streamed.
 enum StreamOrder {
@@ -16,7 +16,8 @@ enum StreamOrder {
 /// pagination in one direction by hard-coding the [order] parameter to match
 /// the API order.
 Stream<T> streamPaginatedEndpoint<T>(
-  Future<List<T>> Function({Snowflake? before, Snowflake? after, int? limit}) fetchPage, {
+  Future<List<T>> Function({Snowflake? before, Snowflake? after, int? limit})
+      fetchPage, {
   required Snowflake Function(T) extractId,
   required Snowflake? before,
   required Snowflake? after,
@@ -27,7 +28,9 @@ Stream<T> streamPaginatedEndpoint<T>(
   // Only after:               oldest first
   // Only before:              most recent first
   // Neither after nor before: oldest first
-  order ??= before != null && after == null ? StreamOrder.mostRecentFirst : StreamOrder.oldestFirst;
+  order ??= before != null && after == null
+      ? StreamOrder.mostRecentFirst
+      : StreamOrder.oldestFirst;
   before ??= Snowflake.now();
   after ??= Snowflake.zero;
 
@@ -38,8 +41,10 @@ Stream<T> streamPaginatedEndpoint<T>(
     // We choose the order of the pages by passing either before or after
     // depending on the stream order.
     final page = await switch (order) {
-      StreamOrder.mostRecentFirst => fetchPage(limit: pageSize, before: nextPageBefore),
-      StreamOrder.oldestFirst => fetchPage(limit: pageSize, after: nextPageAfter),
+      StreamOrder.mostRecentFirst =>
+        fetchPage(limit: pageSize, before: nextPageBefore),
+      StreamOrder.oldestFirst =>
+        fetchPage(limit: pageSize, after: nextPageAfter),
     };
 
     if (page.isEmpty) {

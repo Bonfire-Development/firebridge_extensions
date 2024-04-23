@@ -1,4 +1,4 @@
-import 'package:nyxx/nyxx.dart';
+import 'package:nyxx_self/nyxx.dart';
 
 extension RoleManagerExtensions on RoleManager {
   /// The role representing `@everyone` in this guild.

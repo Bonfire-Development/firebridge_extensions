@@ -1,4 +1,4 @@
-import 'package:nyxx/nyxx.dart';
+import 'package:nyxx_self/nyxx.dart';
 import 'package:nyxx_extensions/src/utils/endpoint_paginator.dart';
 
 /// Extensions on [AuditLogManager].
@@ -17,7 +17,12 @@ extension AuditLogManagerExtensions on AuditLogManager {
     StreamOrder? order,
   }) =>
       streamPaginatedEndpoint(
-        ({after, before, limit}) => list(userId: userId, type: type, after: after, before: before, limit: limit),
+        ({after, before, limit}) => list(
+            userId: userId,
+            type: type,
+            after: after,
+            before: before,
+            limit: limit),
         extractId: (entry) => entry.id,
         before: before,
         after: after,

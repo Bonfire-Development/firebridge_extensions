@@ -1,4 +1,4 @@
-import 'package:nyxx/nyxx.dart';
+import 'package:nyxx_self/nyxx.dart';
 import 'package:nyxx_extensions/src/utils/endpoint_paginator.dart';
 
 /// Extensions on [ChannelManager]s.
@@ -14,7 +14,8 @@ extension ChannelManagerExtensions on ChannelManager {
     int? pageSize,
   }) =>
       streamPaginatedEndpoint(
-        ({after, before, limit}) => listThreadMembers(id, withMembers: withMembers, after: after, limit: limit),
+        ({after, before, limit}) => listThreadMembers(id,
+            withMembers: withMembers, after: after, limit: limit),
         extractId: (member) => member.userId,
         before: before,
         after: after,

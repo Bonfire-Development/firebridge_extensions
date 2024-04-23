@@ -1,4 +1,4 @@
-import 'package:nyxx/nyxx.dart';
+import 'package:nyxx_self/nyxx.dart';
 import 'package:nyxx_extensions/src/utils/endpoint_paginator.dart';
 
 /// Extensions on [UserManager]s.
@@ -16,7 +16,8 @@ extension UserManagerExtensions on UserManager {
     StreamOrder? order,
   }) =>
       streamPaginatedEndpoint(
-        ({after, before, limit}) => listCurrentUserGuilds(after: after, before: before, limit: limit, withCounts: withCounts),
+        ({after, before, limit}) => listCurrentUserGuilds(
+            after: after, before: before, limit: limit, withCounts: withCounts),
         extractId: (guild) => guild.id,
         before: before,
         after: after,

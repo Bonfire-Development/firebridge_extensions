@@ -1,4 +1,4 @@
-import 'package:nyxx/nyxx.dart';
+import 'package:nyxx_self/nyxx.dart';
 import 'package:nyxx_extensions/src/utils/endpoint_paginator.dart';
 
 /// Extensions on [ScheduledEventManager]s.
@@ -17,7 +17,11 @@ extension ScheduledEventManagerExtensions on ScheduledEventManager {
     StreamOrder? order,
   }) =>
       streamPaginatedEndpoint(
-        ({after, before, limit}) => listEventUsers(id, after: after, before: before, limit: limit, withMembers: withMembers),
+        ({after, before, limit}) => listEventUsers(id,
+            after: after,
+            before: before,
+            limit: limit,
+            withMembers: withMembers),
         extractId: (user) => user.user.id,
         before: before,
         after: after,
