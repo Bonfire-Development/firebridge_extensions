@@ -4,8 +4,8 @@ import 'package:nyxx_extensions/nyxx_extensions.dart';
 /// Extensions on [Message]s.
 extension MessageExtensions on Message {
   /// A URL clients can visit to navigate to this message.
-  // Future<Uri> get url async => Uri.https(
-  //     manager.client.apiOptions.host, '${(await channel.get()).url.path}/$id');
+  Future<Uri> get url async => Uri.https(
+      manager.client.apiOptions.host, '${(await channel.get()).url.path}/$id');
 
   /// Sends a reply to the message.
   Future<Message> sendReply(MessageBuilder builder) {
