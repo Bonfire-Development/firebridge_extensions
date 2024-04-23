@@ -11,9 +11,9 @@ environment:
 dependencies:
   http: ^1.1.0
   nyxx_self:
-  git:
-    url: https://github.com/V3ntus/nyxx-self
-    ref: dev
+    git:
+      url: https://github.com/V3ntus/nyxx-self
+      ref: dev
 
 dev_dependencies:
   coverage: ^1.0.3
