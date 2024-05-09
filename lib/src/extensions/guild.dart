@@ -1,4 +1,4 @@
-import 'package:nyxx_self/nyxx.dart';
+import 'package:nyxx/nyxx.dart';
 import 'package:nyxx_extensions/src/extensions/managers/guild_manager.dart';
 
 /// Extensions on [PartialGuild]s.

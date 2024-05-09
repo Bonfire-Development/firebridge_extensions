@@ -1,4 +1,4 @@
-import 'package:nyxx_self/nyxx.dart';
+import 'package:nyxx/nyxx.dart';
 import 'package:nyxx_extensions/src/extensions/guild.dart';
 import 'package:nyxx_extensions/src/extensions/managers/channel_manager.dart';
 import 'package:nyxx_extensions/src/utils/formatters.dart';

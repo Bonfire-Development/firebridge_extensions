@@ -1,4 +1,4 @@
-import 'package:nyxx_self/nyxx.dart';
+import 'package:nyxx/nyxx.dart';
 import 'package:nyxx_extensions/src/utils/endpoint_paginator.dart';
 
 /// Extensions on [GuildManager]s.

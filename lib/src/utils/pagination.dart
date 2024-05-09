@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:nyxx_self/nyxx.dart';
+import 'package:nyxx/nyxx.dart';
 
 /// {@template pagination_options}
 /// Options for controlling pagination.

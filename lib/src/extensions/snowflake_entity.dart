@@ -1,4 +1,4 @@
-import 'package:nyxx_self/nyxx.dart';
+import 'package:nyxx/nyxx.dart';
 
 /// Extensions on [SnowflakeEntity]s.
 extension SnowflakeEntityExtensions<T extends SnowflakeEntity<T>>

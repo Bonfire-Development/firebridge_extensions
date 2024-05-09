@@ -11,9 +11,9 @@ environment:
 
 dependencies:
   http: ^1.1.0
-  nyxx_self:
+  nyxx:
     git:
-      url: https://github.com/V3ntus/nyxx-self
+      url: https://github.com/Bonfire-Development/firebridge
       ref: dev
 
 dev_dependencies:

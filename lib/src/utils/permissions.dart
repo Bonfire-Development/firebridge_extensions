@@ -1,4 +1,4 @@
-import 'package:nyxx_self/nyxx.dart';
+import 'package:nyxx/nyxx.dart';
 
 /// Compute the permissions for [member] in a given [channel].
 ///

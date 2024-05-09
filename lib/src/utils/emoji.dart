@@ -2,8 +2,8 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 
-import 'package:nyxx_self/src/utils/to_string_helper/to_string_helper.dart';
-import 'package:nyxx_self/src/utils/parsing_helpers.dart';
+import 'package:nyxx/src/utils/to_string_helper/to_string_helper.dart';
+import 'package:nyxx/src/utils/parsing_helpers.dart';
 
 /// {@template emoji_definition}
 /// Information about a text emoji.

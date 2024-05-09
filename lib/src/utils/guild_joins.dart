@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:nyxx_self/nyxx.dart';
+import 'package:nyxx/nyxx.dart';
 
 /// A global instance of the [GuildJoins] plugin.
 final guildJoins = GuildJoins();
