@@ -1,5 +1,5 @@
 name: nyxx_extensions
-version: 4.1.1
+version: 4.1.3
 publish_to: none
 description: Extensions to the Discord API provided in nyxx, including pagination support and message sanitization.
 repository: https://github.com/Bonfire-Development/firebridge_extensions
