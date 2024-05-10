@@ -1,5 +1,5 @@
-import "package:nyxx/nyxx.dart";
-import "package:nyxx_extensions/src/extensions/snowflake_entity.dart";
+import "package:firebridge/firebridge.dart";
+import "package:firebridge_extensions/src/extensions/snowflake_entity.dart";
 
 const _whitespaceCharacter = "‎";
 

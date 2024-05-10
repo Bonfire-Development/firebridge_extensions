@@ -1,8 +1,8 @@
 import 'dart:io';
 
-import 'package:nyxx/nyxx.dart';
+import 'package:firebridge/firebridge.dart';
 import 'package:test/test.dart';
-import 'package:nyxx_extensions/nyxx_extensions.dart';
+import 'package:firebridge_extensions/firebridge_extensions.dart';
 
 void main() {
   final testToken = Platform.environment['TEST_TOKEN'];

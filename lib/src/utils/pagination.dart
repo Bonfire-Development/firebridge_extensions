@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:nyxx/nyxx.dart';
+import 'package:firebridge/firebridge.dart';
 
 /// {@template pagination_options}
 /// Options for controlling pagination.

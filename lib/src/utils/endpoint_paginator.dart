@@ -1,4 +1,4 @@
-import 'package:nyxx/nyxx.dart';
+import 'package:firebridge/firebridge.dart';
 
 /// Controls the order in which entities from paginated endpoints are streamed.
 enum StreamOrder {

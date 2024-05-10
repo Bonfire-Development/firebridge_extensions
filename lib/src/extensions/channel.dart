@@ -1,8 +1,8 @@
-import 'package:nyxx/nyxx.dart';
-import 'package:nyxx_extensions/src/extensions/guild.dart';
-import 'package:nyxx_extensions/src/extensions/managers/channel_manager.dart';
-import 'package:nyxx_extensions/src/utils/formatters.dart';
-import 'package:nyxx_extensions/src/utils/permissions.dart';
+import 'package:firebridge/firebridge.dart';
+import 'package:firebridge_extensions/src/extensions/guild.dart';
+import 'package:firebridge_extensions/src/extensions/managers/channel_manager.dart';
+import 'package:firebridge_extensions/src/utils/formatters.dart';
+import 'package:firebridge_extensions/src/utils/permissions.dart';
 
 /// Extensions on [PartialChannel]s.
 extension PartialChannelExtensions on PartialChannel {

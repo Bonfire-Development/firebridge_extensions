@@ -1,5 +1,5 @@
-import 'package:nyxx/nyxx.dart';
-import 'package:nyxx_extensions/src/extensions/managers/guild_manager.dart';
+import 'package:firebridge/firebridge.dart';
+import 'package:firebridge_extensions/src/extensions/managers/guild_manager.dart';
 
 /// Extensions on [PartialGuild]s.
 extension PartialGuildExtensions on PartialGuild {

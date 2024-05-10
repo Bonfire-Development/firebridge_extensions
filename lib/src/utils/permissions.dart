@@ -1,4 +1,4 @@
-import 'package:nyxx/nyxx.dart';
+import 'package:firebridge/firebridge.dart';
 
 /// Compute the permissions for [member] in a given [channel].
 ///

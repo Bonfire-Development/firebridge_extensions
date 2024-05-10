@@ -1,5 +1,5 @@
-import 'package:nyxx/nyxx.dart';
-import 'package:nyxx_extensions/src/utils/emoji.dart';
+import 'package:firebridge/firebridge.dart';
+import 'package:firebridge_extensions/src/utils/emoji.dart';
 
 /// Extensions on [TextEmoji].
 extension TextEmojiExtensions on TextEmoji {

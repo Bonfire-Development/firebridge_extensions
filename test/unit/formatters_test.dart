@@ -1,4 +1,4 @@
-import 'package:nyxx_extensions/nyxx_extensions.dart';
+import 'package:firebridge_extensions/firebridge_extensions.dart';
 import 'package:test/test.dart';
 
 const testContent = 'This is a `test` content';

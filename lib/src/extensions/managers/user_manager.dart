@@ -1,5 +1,5 @@
-import 'package:nyxx/nyxx.dart';
-import 'package:nyxx_extensions/src/utils/endpoint_paginator.dart';
+import 'package:firebridge/firebridge.dart';
+import 'package:firebridge_extensions/src/utils/endpoint_paginator.dart';
 
 /// Extensions on [UserManager]s.
 extension UserManagerExtensions on UserManager {

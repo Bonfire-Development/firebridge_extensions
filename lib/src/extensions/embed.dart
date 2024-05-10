@@ -1,4 +1,4 @@
-import 'package:nyxx/nyxx.dart';
+import 'package:firebridge/firebridge.dart';
 
 /// Extensions on [Embed].
 extension EmbedExtensions on Embed {

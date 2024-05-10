@@ -1,5 +1,5 @@
-import 'package:nyxx/nyxx.dart';
-import 'package:nyxx_extensions/src/utils/formatters.dart';
+import 'package:firebridge/firebridge.dart';
+import 'package:firebridge_extensions/src/utils/formatters.dart';
 
 /// Extensions on [PartialUser].
 extension PartialUserExtensions on PartialUser {

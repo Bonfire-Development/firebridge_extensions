@@ -1,4 +1,4 @@
-import 'package:nyxx/nyxx.dart';
+import 'package:firebridge/firebridge.dart';
 
 /// Wraps the [code] in a code block with the specified language, if any.
 String codeBlock(String code, [String language = '']) =>

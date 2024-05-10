@@ -1,4 +1,4 @@
-import 'package:nyxx_extensions/src/utils/formatters.dart';
+import 'package:firebridge_extensions/src/utils/formatters.dart';
 
 /// Extensions on [DateTime].
 extension DateTimeExtensions on DateTime {
