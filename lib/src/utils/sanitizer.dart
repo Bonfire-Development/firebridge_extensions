@@ -86,8 +86,8 @@ Future<String> sanitizeContent(
               .channels[Snowflake.parse(match.group(1)!)]
               .getOrNull()) {
             GuildChannel(:final name) || GroupDmChannel(:final name) => name,
-            DmChannel(:final recipient) =>
-              recipient.globalName ?? recipient.username,
+            DmChannel(:final recipients) =>
+              recipients.first.globalName ?? recipients.first.username,
             _ => 'Unknown Channel',
           },
         SanitizerTarget.roles => switch (await guild

@@ -1,3 +1,7 @@
+## 4.1.1
+__15.6.2024__
+- Bumped firebridge to `6.2.8`
+
 ## 4.1.0
 __15.11.2023__
 - Added a helper to reply to a message.
