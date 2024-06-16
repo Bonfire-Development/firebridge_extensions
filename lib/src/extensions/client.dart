@@ -7,11 +7,15 @@ extension NyxxRestExtensions on NyxxRest {
   Future<List<TextEmoji>> getTextEmojis() async => (await getEmojiDefinitions())
       .map((definition) => TextEmoji(
           id: Snowflake.zero,
+          json: {},
           manager: guilds[Snowflake.zero].emojis,
           name: definition.surrogates))
       .toList();
 
   /// Get a text emoji by name.
   TextEmoji getTextEmoji(String name) => TextEmoji(
-      id: Snowflake.zero, manager: guilds[Snowflake.zero].emojis, name: name);
+      json: {},
+      id: Snowflake.zero,
+      manager: guilds[Snowflake.zero].emojis,
+      name: name);
 }

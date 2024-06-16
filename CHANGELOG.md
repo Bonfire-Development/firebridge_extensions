@@ -1,3 +1,7 @@
+## 4.1.2
+__15.6.2024__
+- Bumped firebridge to `6.2.9`
+
 ## 4.1.1
 __15.6.2024__
 - Bumped firebridge to `6.2.8`
