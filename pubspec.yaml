@@ -4,12 +4,14 @@ description: Extensions to the Discord API provided in nyxx, including paginatio
 repository: https://github.com/OpenBonfire/firebridge_extensions
 documentation: https://nyxx.l7ssha.xyz
 issue_tracker: https://github.com/OpenBonfire/firebridge_extensions/issues
+publish_to: none
 
 environment:
   sdk: ^3.0.0
 
 dependencies:
-  firebridge: ^6.2.9
+  firebridge:
+    path: ../firebridge
   http: ^1.1.0
 
 dev_dependencies:
